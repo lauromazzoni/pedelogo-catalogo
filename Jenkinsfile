@@ -1,4 +1,5 @@
 pipeline {
+    //agent: define quem vai executar essa rotina
     agent any
 
     stages {
