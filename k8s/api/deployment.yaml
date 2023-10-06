@@ -13,7 +13,7 @@ spec:
     spec:            
       containers:
       - name: api
-        image: fabricioveronez/api-produto:{{tag}}
+        image: lauromazzoni/api-produto:latest
         ports:
         - containerPort: 80
         imagePullPolicy: Always
@@ -27,17 +27,3 @@ spec:
             value: mongo-service
           - name: Mongo__DataBase
             value: admin
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: api-service
-spec:
-  selector:
-    app: api
-  ports:
-  - port: 80
-    targetPort: 80
-  type: LoadBalancer
