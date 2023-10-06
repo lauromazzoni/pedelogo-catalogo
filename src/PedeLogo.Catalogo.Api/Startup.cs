@@ -49,9 +49,9 @@ namespace PedeLogo.Catalogo.Api
             {
                 c.SwaggerDoc("v3", new OpenApiInfo
                 {
-                    Version = "v23",
-                    Title = "API para cadastro de Produtos - v23",
-                    Description = "API para cadastro de Produtos - v23"
+                    Version = "v23a",
+                    Title = "API para cadastro de Produtos - v23a",
+                    Description = "API para cadastro de Produtos - v23a"
                 });
             });
         }
