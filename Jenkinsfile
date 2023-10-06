@@ -41,8 +41,10 @@ pipeline {
 
             steps {
                 withKubeConfig([credentialsId: 'kube']) {
+                    sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
+                    sh 'chmod u+x ./kubectl'                    
                     sh 'sed -i "s/{{tag}}/$tag_version/g" ./k8s/api/deployment.yaml'
-                    sh 'kubectl apply -f ./k8s/ -R'
+                    sh './kubectl apply -f ./k8s/ -R'
                 }                
             }
         }
